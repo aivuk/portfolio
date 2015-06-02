@@ -1,3 +1,32 @@
+@font-face {
+    font-family: OpenSans;
+    src: url('/static/fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('/static/fonts/OpenSans-LightItalic.ttf');
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: BebasNeue;
+    src: url('/static/fonts/BebasNeue.otf');
+}
+
+body { 
+  background-color: #111;
+}
+
+.navbar {
+   background-color: rgba(0,0,0,0.5);
+}
+
+.navbar-brand {
+   font-family: BebasNeue;
+}
+
 .top-blocks {
     margin-top: 30px;
 }
@@ -31,4 +60,22 @@ tr.prova {
 
 a {
     color: #0068BD;
+}
+
+img {
+   margin-right: 10px;
+}
+
+img:hover {
+}
+
+.left-space {
+    margin-right: 30px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.container {
 }

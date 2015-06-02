@@ -5,7 +5,7 @@ from __future__ import unicode_literals  # unicode by default
 import sys
 import datetime
 from collections import OrderedDict
-import pandoc
+import pypandoc
 
 from flask import Flask
 from flask import render_template, redirect, url_for
@@ -82,9 +82,7 @@ app.jinja_env.globals.update(remove_l10n_prefix=remove_l10n_prefix)
 
 def render_markdown(text):
     ''' Render Markdown text to HTML. '''
-    doc = pandoc.Document()
-    doc.markdown = text.encode('utf8')
-    return unicode(doc.html, 'utf8')
+    return pypandoc.convert(text, 'html', format='md')
 
 app.config['FLATPAGES_HTML_RENDERER'] = render_markdown
 
@@ -111,6 +109,8 @@ def page(path):
     # Get custom template
     template = page.meta.get('template', 'page.html')
 
+    tvars = page.meta
+
     # Verify if need redirect
     redirect_ = page.meta.get('redirect', None)
     if redirect_:
@@ -119,7 +119,7 @@ def page(path):
     today = datetime.datetime.now().strftime("%B %dth %Y")
 
     # Render the page
-    return render_template(template, page=page, today=today, pages=pages)
+    return render_template(template, page=page, today=today, pages=pages, tvars=tvars)
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build':
