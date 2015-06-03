@@ -5,16 +5,31 @@
     <meta charset="utf-8">
     <title>Edgar Zanella Alvarenga - Portfolio</title>
     <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootswatch.min.css') }}">
     <link href="/static/css/article.css" rel="stylesheet">
 </head>
 <body class="background" {% if tvars['background'] %} style="background-image:url('{{ tvars['background'] }}');" {% endif %}>
-<div id="menu">
+    <div class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <a href="{{ url_for('page', path='/') }}" class="navbar-brand">portfolio://Edgar-Zanella-Alvarenga</a>
+    <div id="art-menu">
+    Works
+    {% include "menu.html" %}
+        </div>
+      </div>
+    </div>
+
+
+        </div>
+<!--<div id="menu">
     <a class="name" href="/">Portfolio://Edgar Zanella Alvarenga</a>
     <div id="art-menu">
     Works 
     {% include "menu.html" %}
    </div>
-</div>
+</div>-->
 <div class="not-fullscreen background parallax" data-img-width="1600" data-img-height="1064" data-diff="100">
     <div class="content-a">
         <div class="content-b-title">
@@ -28,23 +43,27 @@
 <div class="fullscreen background parallax">
  <div class="content-a">
    <div class="content-b dark-back" data-img-width="1600" data-img-height="1064" data-diff="100">
-   <div class="vimeo">
-   <div class="vimeo-wrapper" >
-   <iframe src="https://player.vimeo.com/video/125715099" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-   </div>
-   </div>
-   <div class="white-description" style="float: left">
-   <img src="/static/img/github.svg" width="50px">
-   <p>
-   Work done in OpenFrameWorks + Kinect.  
-   <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet dui et interdum vulputate. Morbi nec dolor tincidunt, aliquet enim nec, pretium mi. Praesent libero urna, egestas sed ornare eleifend, malesuada eget eros. Praesent facilisis urna ex, sed pharetra felis laoreet nec. Praesent venenatis, turpis ac gravida vestibulum, elit neque scelerisque quam, quis fringilla odio urna eu nisi. Maecenas vitae feugiat ipsum. Curabitur maximus lectus accumsan libero sodales, luctus faucibus massa ultricies.
-   <p>
-Ut nec pretium lacus. Sed massa lacus, placerat a tellus eu, porta condimentum justo. Donec dictum consectetur nibh, quis semper leo efficitur ut. Donec convallis ante ac massa hendrerit, at consectetur diam hendrerit. Fusce vel laoreet lectus. Nam quis ultricies urna, at accumsan arcu. Proin et enim elementum, rutrum turpis sit amet, fringilla ex. Donec tincidunt at nibh quis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar sit amet lectus ut ullamcorper. Curabitur faucibus euismod arcu vitae ultrices. Donec vel tortor ac tellus pretium volutpat sit amet ut risus. Vivamus imperdiet magna sem, id feugiat purus scelerisque vel. 
-   </div>
-   <div style="clear: both;">&nbsp;</div>
-   </div>
+   <div class="container">
+     <div class="row">
+       <div class="col-xs-12">
+           <iframe src="https://player.vimeo.com/video/125715099" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-xs-12 white-description">
+         <img src="/static/img/github.svg" width="50px">
+         <p>
+         Work done in OpenFrameWorks + Kinect.  
+         <p>
+Lor      em ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet dui et interdum vulputate. Morbi nec dolor tincidunt, aliquet enim nec, pretium mi. Praesent libero urna, egestas sed ornare eleifend, malesuada eget eros. Praesent facilisis urna ex, sed pharetra felis laoreet nec. Praesent venenatis, turpis ac gravida vestibulum, elit neque scelerisque quam, quis fringilla odio urna eu nisi. Maecenas vitae feugiat ipsum. Curabitur maximus lectus accumsan libero sodales, luctus faucibus massa ultricies.
+         <p>
+Ut       nec pretium lacus. Sed massa lacus, placerat a tellus eu, porta condimentum justo. Donec dictum consectetur nibh, quis semper leo efficitur ut. Donec convallis ante ac massa hendrerit, at consectetur diam hendrerit. Fusce vel laoreet lectus. Nam quis ultricies urna, at accumsan arcu. Proin et enim elementum, rutrum turpis sit amet, fringilla ex. Donec tincidunt at nibh quis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar sit amet lectus ut ullamcorper. Curabitur faucibus euismod arcu vitae ultrices. Donec vel tortor ac tellus pretium volutpat sit amet ut risus. Vivamus imperdiet magna sem, id feugiat purus scelerisque vel. 
+       </div>
+     </div>
  </div>
+</div>
+</div>
+</div>
 </div>
 <div class="fullscreen background parallax" data-img-width="1600" data-img-height="1064" data-diff="100">
     <div class="content-a">

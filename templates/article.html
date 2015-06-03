@@ -5,8 +5,25 @@
     <title>Edgar Zanella Alvarenga - Portfolio</title>
     <meta name="description" content="{{ description }}">
     <link href="/static/css/article.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootswatch.min.css') }}">
 </head>
 <body class="background" {% if tvars['background'] %} style="background-image:url('{{ tvars['background'] }}');" {% endif %}>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <a href="{{ url_for('page', path='/') }}" class="navbar-brand">portfolio://Edgar-Zanella-Alvarenga</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+<!--
+
 <div id="menu">
     <a class="name" href="/">Portfolio://Edgar Zanella Alvarenga</a>
     <div id="art-menu">
@@ -22,6 +39,7 @@
     </ul>
     </div>
 </div>
+-->
 <div class="not-fullscreen background parallax" data-img-width="1600" data-img-height="1064" data-diff="100">
     <div class="content-a">
         <div class="content-b-title">

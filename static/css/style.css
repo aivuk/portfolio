@@ -24,6 +24,17 @@ body {
 }
 
 .navbar-brand {
+	color: white;
+
+}
+
+.navbar-brand:hover {
+	color: white;
+	text-decoration: underline;
+}
+ 
+ 
+.navbar-brand {
    font-family: BebasNeue;
 }
 
@@ -62,8 +73,12 @@ a {
     color: #0068BD;
 }
 
-img {
+.image-box {
    margin-right: 10px;
+   -webkit-box-shadow: inset 0 0 10px 10px #000;    
+   -moz-box-shadow: inset 0 0 10px 10px #000;
+   box-shadow: inset 0 0 10px 10px #000;
+   z-index: 10;
 }
 
 img:hover {
@@ -78,4 +93,30 @@ img:hover {
 }
 
 .container {
+}
+
+.img-responsive {
+}
+
+.img-responsive:hover > .legend {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    width: 400px;
+    color: white;
+    font-size: 24px;
+    padding: 6px;
+    bottom: 0;
+    font-family: BebasNeue;
+    visibility: visible;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+}
+
+.img-responsive .legend {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
 }
