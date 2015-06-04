@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Edgar Zanella Alvarenga - Portfolio</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootswatch.min.css') }}">
+    <link href="/static/css/article.css" rel="stylesheet">
+</head>
+<body class="background" {% if tvars['background'] %} style="background-image:url('{{ tvars['background'] }}');" {% endif %}>
+    <div class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <a href="{{ url_for('page', path='/') }}" class="navbar-brand">portfolio://Edgar-Zanella-Alvarenga</a>
+    <div id="art-menu">
+    Works
+    {% include "menu.html" %}
+        </div>
+      </div>
+    </div>
+        </div>
+<div class="not-fullscreen background parallax" data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="content-a">
+        <div class="content-b-title">
+            <div class="box">
+                <h1>{{ tvars.title }}</h1>
+                <h2>{{ tvars.subtitle }}</h2>
+            </div>
+       </div>
+    </div>
+</div>
+{% block workContent %}
+{% endblock %}
+<div class="not-fullscreen bottom">
+    <div class="content-a">
+        <div class="content-b">
+		<a href="#"><h1>TOP</h1></a>
+       </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/static/javascripts/article.js"></script>
+</body>
+</html>
