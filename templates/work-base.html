@@ -24,9 +24,11 @@
 <div class="not-fullscreen background parallax" data-img-width="1600" data-img-height="1064" data-diff="100">
     <div class="content-a">
         <div class="content-b-title">
-            <div class="box">
+            <div class="container box">
+                {% block titleContent %}
                 <h1>{{ tvars.title }}</h1>
                 <h2>{{ tvars.subtitle }}</h2>
+                {% endblock %}
             </div>
        </div>
     </div>
@@ -42,5 +44,6 @@
 </div>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/static/javascripts/article.js"></script>
+{%block javascript %}{% endblock %}
 </body>
 </html>

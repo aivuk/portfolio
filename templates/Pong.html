@@ -1,0 +1,133 @@
+{% extends "work-base.html" %}
+{% block workContent %}
+<div class="fullscreen background parallax">
+  <div class="content-a">
+    <div class="container content-b dark-back" data-img-width="1600" data-img-height="1064" data-diff="100">
+      <div class="white-description" style="float: left">
+        <div class="center">
+          <img src="/static/img/github.svg" width="50px">
+            <p>
+            Work done in Processing + Android.  
+        </div>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet dui et interdum vulputate. Morbi nec dolor tincidunt, aliquet enim nec, pretium mi. Praesent libero urna, egestas sed ornare eleifend, malesuada eget eros. Praesent facilisis urna ex, sed pharetra felis laoreet nec. Praesent venenatis, turpis ac gravida vestibulum, elit neque scelerisque quam, quis fringilla odio urna eu nisi. Maecenas vitae feugiat ipsum. Curabitur maximus lectus accumsan libero sodales, luctus faucibus massa ultricies.
+           <p>
+        Ut nec pretium lacus. Sed massa lacus, placerat a tellus eu, porta condimentum justo. Donec dictum consectetur nibh, quis semper leo efficitur ut. Donec convallis ante ac massa hendrerit, at consectetur diam hendrerit. Fusce vel laoreet lectus. Nam quis ultricies urna, at accumsan arcu. Proin et enim elementum, rutrum turpis sit amet, fringilla ex. Donec tincidunt at nibh quis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar sit amet lectus ut ullamcorper. Curabitur faucibus euismod arcu vitae ultrices. Donec vel tortor ac tellus pretium volutpat sit amet ut risus. Vivamus imperdiet magna sem, id feugiat purus scelerisque vel. 
+      </div>
+      <div style="clear: both;">&nbsp;</div>
+    </div>
+  </div>
+</div>
+<div class="fullscreen background parallax" data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="content-a">
+        <div class="content-b">
+       </div>
+    </div>
+</div>
+<div class="fullscreen background parallax" style="background-image:url('/static/img/pong-5.jpg');"  data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="content-a">
+        <div class="content-b">
+       </div>
+    </div>
+</div>
+<div class="fullscreen background parallax" style="background-image:url('/static/img/pong-6.jpg');"  data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="content-a">
+        <div class="content-b">
+       </div>
+    </div>
+</div>
+<div class="fullscreen background parallax" style="background-image:url('/static/img/pong-3.jpg');"  data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="content-a">
+        <div class="content-b">
+       </div>
+    </div>
+</div>
+<div class="fullscreen background parallax" style="background-image:url('/static/img/pong-2.jpg');"  data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="content-a">
+        <div class="content-b">
+       </div>
+    </div>
+</div>
+{% endblock %}
+{% block titleContent %}
+            <div id="pong-box" class="box-pong" style="background-size: 100%;">
+	    	      <canvas width="440" height="240"></canvas>
+                <h1>{{ tvars.title }}</h1>
+                <h2>{{ tvars.subtitle }}</h2>
+            </div>
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript">
+var y1 = Math.floor(Math.random()*210);
+var dy1 = 5;
+var y2 = Math.floor(Math.random()*210);
+var dy2 = 5;
+var bx = 200;
+var by = 100;
+var b_vx = -5;
+var b_vy = -5;
+var now;
+
+$(function () {
+  var canvas = document.getElementsByTagName('canvas')[0];
+  var ctx = canvas.getContext('2d');
+  
+  function assignToDiv(){
+    dataUrl = canvas.toDataURL();
+    document.getElementById('pong-box').style.background='url('+dataUrl+') no-repeat'
+  }
+  
+  function draw(timeStamp) {
+    //requestAnimationFrame(draw);
+    setTimeout(draw, 20);
+
+    y1 = y1 + dy1;
+    y2 = y2 + dy2;
+    bx = bx + b_vx;
+    by = by + b_vy;
+
+
+    if (y1 >= 200 || y1 < 0) {
+       dy1 = dy1*-1; 
+    }
+
+    if (y2 >= 200 || y2 < 0) {
+       dy2 = dy2*-1; 
+    }
+
+    if (by >= 236 || by < 0) {
+       b_vy = b_vy*-1; 
+    }
+
+    if (bx >= 440 || bx < 0) {
+	bx = 220;
+	b_vx *= -1;
+    }
+
+    if (bx <= 9 && bx >= 5 && (by >= y1 - 4 && by <= y1 + 30)) {
+       b_vy = b_vy*-1; 
+       b_vx = b_vx*-1; 
+    }
+
+    if (bx + 4 >= 431 && bx + 4 <= 435 && (by >= y2 - 4 && by <= y2 + 30)) {
+       b_vy = b_vy*-1; 
+       b_vx = b_vx*-1; 
+    }
+
+
+    ctx.clearRect (0, 0, 440, 240);
+ 
+    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.fillRect (5, y1, 4, 30);
+    ctx.fillRect (431, y2, 4, 30);
+    ctx.fillRect (bx, by, 4, 4);
+
+    //dataUrl = canvas.toDataURL();
+    //document.getElementById('pong-box').style.background='url('+dataUrl+') no-repeat'
+  }
+  //window.requestAnimationFrame(draw);
+  draw()
+  //assignToDiv()
+});
+</script>
+{% endblock %}

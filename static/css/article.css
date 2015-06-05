@@ -80,7 +80,6 @@ a {
 .content-b-title .box {
     background-color: rgba(0,0,0,0.7);
     padding: 20px;
-    max-width: 50%;
     margin: auto;
 }
 
@@ -147,9 +146,14 @@ section {
   background-color: rgba(0,0,0,0.7);
 }
 
+.center {
+  text-align: center;
+}
+
 .white-description {
   background-color: rgba(255,255,255,0.9);
-  padding: 20px;
+  padding: 40px 60px;
+  text-align: left;
 }
 
 .white-description.full {
