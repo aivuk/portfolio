@@ -45,7 +45,8 @@ a {
 }
 
 .content-b a {
- color: black;
+   color: black;
+   font-weight: bold;
 }
 
 .fullscreen,
@@ -245,10 +246,11 @@ section {
 #art-menu {
     font-family: BebasNeue;
     float: right;
-    width: 100px;
     height: 100%;
-    line-height: 60px;
+    line-height: 22px;
     vertical-align: middle;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-right: 20px;
     padding-left: 20px;
     color: rgba(255,255,255, 0.8);
@@ -256,12 +258,13 @@ section {
 }
 
 #art-menu:hover {
-    background-color: rgba(255,255,255,0.8);
-    color: rgba(0,0,0, 1);
+    background-color: rgba(255,255,255, 1);
+    color: black;
 }
 
 #art-menu ul {
   padding: 0;
+  top: 62px;
   position: absolute;
   right: 0;
   width: 200px;
@@ -368,4 +371,16 @@ ul li:hover ul {
    font-family: BebasNeue;
 }
 
+.nav li {
+  font-size: 16px;
+}
+
+.navbar .nav li a {
+  font-size: 16px;
+  font-family: BebasNeue;
+}
+
+.nav li a:hover, a:focus {
+  color: black;
+}
 
